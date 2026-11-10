@@ -14,9 +14,9 @@ export function Card({
   ...props
 }: CardProps) {
   const variantStyles = {
-    dark: "bg-[#12131a]/80 text-white border border-white/10 backdrop-blur-xl shadow-xl",
-    light: "bg-white text-neutral-900 border border-neutral-100 shadow-2xl",
-    glass: "bg-white/10 text-white border border-white/15 backdrop-blur-md",
+    dark: "bg-[#12131a]/80 text-white border border-white/10 backdrop-blur-xl shadow-on-blue",
+    light: "bg-white text-neutral-900 border border-neutral-100 shadow-on-white",
+    glass: "bg-white/10 text-white border border-white/15 backdrop-blur-md shadow-on-blue",
   };
 
   return (
@@ -24,7 +24,7 @@ export function Card({
       className={cn(
         "rounded-3xl p-6 transition-all duration-300",
         variantStyles[variant],
-        hoverEffect && "hover:translate-y-[-4px] hover:shadow-2xl",
+        hoverEffect && (variant === "light" ? "hover:translate-y-[-4px] hover:shadow-on-white-hover" : "hover:translate-y-[-4px] hover:shadow-on-blue-hover"),
         className
       )}
       {...props}

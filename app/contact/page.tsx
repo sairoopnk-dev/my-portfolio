@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Mail, MapPin, CheckCircle, Send, Clock, Sparkles } from "lucide-react";
 import { siteConfig } from "@/content/site-config";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PanelNav } from "@/components/layout/panel-nav";
@@ -49,8 +48,7 @@ export default function ContactPage() {
 
         {/* Top Header */}
         <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-3">
-            <BrandLogo className="text-white" size={40} />
+          <div>
             <Badge variant="blue">INITIATE DIALOGUE</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight text-white leading-[1.08] pt-1 max-w-lg">
@@ -120,8 +118,8 @@ export default function ContactPage() {
           <PanelNav />
         </div>
 
-        {/* Form Container */}
-        <div className="my-auto py-2 sm:py-4 max-w-lg relative z-10">
+        {/* Form Container with blue shadow on white */}
+        <div className="my-auto py-3 sm:py-5 px-5 sm:px-7 rounded-3xl bg-neutral-50/90 border border-neutral-200/90 shadow-on-white max-w-lg relative z-10">
           {isSubmitted ? (
             <div className="py-10 text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
@@ -209,7 +207,7 @@ export default function ContactPage() {
                 type="submit"
                 variant="electric"
                 disabled={isSubmitting}
-                className="w-full justify-center text-sm py-3.5 mt-1 font-bold"
+                className="w-full justify-center text-sm py-3.5 mt-1 font-bold shadow-[0_8px_22px_rgba(18,62,140,0.3)] hover:shadow-[0_12px_28px_rgba(18,62,140,0.45)]"
               >
                 {isSubmitting ? (
                   <span>Transmitting...</span>

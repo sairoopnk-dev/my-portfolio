@@ -28,12 +28,12 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       "inline-flex items-center justify-center font-medium transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
 
     const variantStyles = {
-      // Clean white pill from Image 1 with subtle blue glow
+      // Clean white pill for blue sections with white contrast shadow
       primary:
-        "bg-white text-neutral-950 font-bold rounded-full hover:bg-neutral-100 shadow-[0_10px_30px_-5px_rgba(29,116,232,0.45)] hover:shadow-[0_15px_35px_-5px_rgba(29,116,232,0.65)] hover:translate-y-[-1px]",
-      // Electric cobalt blue from Image 2
+        "bg-white text-neutral-950 font-bold rounded-full hover:bg-neutral-100 shadow-on-blue hover:shadow-on-blue-hover hover:translate-y-[-1px]",
+      // Electric cobalt blue for white sections with blue contrast shadow
       electric:
-        "bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-semibold rounded-full hover:from-blue-500 hover:to-sky-400 shadow-[0_10px_30px_-5px_rgba(29,116,232,0.5)] hover:translate-y-[-1px]",
+        "bg-gradient-to-r from-blue-600 via-blue-500 to-sky-500 text-white font-semibold rounded-full hover:from-blue-500 hover:to-sky-400 shadow-on-white hover:shadow-on-white-hover hover:translate-y-[-1px]",
       // Dark glass secondary
       secondary:
         "bg-white/10 text-white rounded-full hover:bg-white/20 border border-white/15 backdrop-blur-md",

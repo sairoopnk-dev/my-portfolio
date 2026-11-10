@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, CheckCircle2, Layers } from "lucide-react";
 import { skillCategories } from "@/content/skills";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { PanelNav } from "@/components/layout/panel-nav";
 
@@ -32,8 +31,7 @@ export default function SkillsPage() {
 
         {/* Top Header */}
         <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-3">
-            <BrandLogo className="text-white" size={40} />
+          <div>
             <Badge variant="blue">TECHNICAL ARSENAL</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight text-white leading-[1.08] pt-1 max-w-lg">
@@ -53,11 +51,11 @@ export default function SkillsPage() {
           </p>
         </div>
 
-        {/* Action Link */}
+        {/* Action Link with white contrast shadow on blue */}
         <div className="pt-2 flex items-center gap-3 relative z-10">
           <Link
             href="/experience"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:bg-neutral-100 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-on-blue hover:shadow-on-blue-hover transition-all hover:scale-105"
           >
             <span>View Experience</span>
             <ArrowUpRight size={16} className="text-blue-600" />
@@ -80,7 +78,7 @@ export default function SkillsPage() {
           {skillCategories.map((cat, idx) => (
             <div
               key={idx}
-              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 space-y-2.5"
+              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 shadow-on-white hover:shadow-on-white-hover space-y-2.5 transition-all duration-200"
             >
               <div className="flex items-center justify-between">
                 <h3 className="text-xs sm:text-sm font-bold text-neutral-900 tracking-tight flex items-center gap-2">
@@ -96,7 +94,7 @@ export default function SkillsPage() {
                 {cat.skills.slice(0, 4).map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-2 sm:p-2.5 rounded-xl bg-white border border-neutral-200/80 flex items-center justify-between gap-1 shadow-xs"
+                    className="p-2 sm:p-2.5 rounded-xl bg-white border border-neutral-200/80 flex items-center justify-between gap-1 shadow-xs hover:border-blue-300 transition-colors"
                   >
                     <div className="flex items-center gap-1.5 min-w-0">
                       <CheckCircle2 size={13} className="text-blue-600 shrink-0" />

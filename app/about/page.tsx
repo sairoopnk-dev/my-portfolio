@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import { ArrowUpRight, Terminal, Cpu, Zap, Sparkles } from "lucide-react";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { PanelNav } from "@/components/layout/panel-nav";
 
@@ -49,8 +48,7 @@ export default function AboutPage() {
 
         {/* Top Header */}
         <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-3">
-            <BrandLogo className="text-white" size={40} />
+          <div>
             <Badge variant="blue">ENGINEERING PHILOSOPHY</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight text-white leading-[1.08] pt-1 max-w-lg">
@@ -75,7 +73,7 @@ export default function AboutPage() {
         <div className="pt-2 flex items-center gap-3 flex-wrap relative z-10">
           <Link
             href="/results"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:bg-neutral-100 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-on-blue hover:shadow-on-blue-hover transition-all hover:scale-105"
           >
             <span>Explore Results</span>
             <ArrowUpRight size={16} className="text-blue-600" />
@@ -83,7 +81,7 @@ export default function AboutPage() {
 
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 text-white font-semibold text-xs sm:text-sm border border-white/20 hover:bg-white/20 transition-all"
+            className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-white/10 text-white font-semibold text-xs sm:text-sm border border-white/20 hover:bg-white/20 shadow-[0_4px_16px_rgba(255,255,255,0.08)] transition-all"
           >
             <span>Get in Touch</span>
           </Link>
@@ -108,7 +106,7 @@ export default function AboutPage() {
           {pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 hover:border-blue-300 hover:bg-blue-50/40 transition-all duration-200"
+              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/80 hover:border-blue-300 hover:bg-blue-50/40 shadow-on-white hover:shadow-on-white-hover transition-all duration-200"
             >
               <div className="flex items-center gap-2.5 mb-1.5">
                 <div className="p-1.5 rounded-lg bg-blue-100/70 text-blue-600">

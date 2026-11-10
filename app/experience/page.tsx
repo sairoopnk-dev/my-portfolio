@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { experiences } from "@/content/experience";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { PanelNav } from "@/components/layout/panel-nav";
 
@@ -32,8 +31,7 @@ export default function ExperiencePage() {
 
         {/* Top Header */}
         <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-3">
-            <BrandLogo className="text-white" size={40} />
+          <div>
             <Badge variant="blue">CAREER CHRONICLE</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight text-white leading-[1.08] pt-1 max-w-lg">
@@ -47,7 +45,7 @@ export default function ExperiencePage() {
             Engineering leadership spanning distributed streaming infrastructure,
             multi-tenant architectures, and high-velocity team orchestration.
           </p>
-          <div className="p-4 rounded-2xl bg-white/10 border border-white/15 space-y-2">
+          <div className="p-4 rounded-2xl bg-white/10 border border-white/15 shadow-[0_8px_24px_rgba(255,255,255,0.08)] space-y-2">
             <div className="text-[10px] font-mono text-sky-300 uppercase tracking-widest font-bold">
               IMPACT SUMMARY
             </div>
@@ -59,11 +57,11 @@ export default function ExperiencePage() {
           </div>
         </div>
 
-        {/* Action Link */}
+        {/* Action Link with white contrast shadow on blue */}
         <div className="pt-2 flex items-center gap-3 relative z-10">
           <Link
             href="/results"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:bg-neutral-100 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-on-blue hover:shadow-on-blue-hover transition-all hover:scale-105"
           >
             <span>See Shipped Results</span>
             <ArrowUpRight size={16} className="text-blue-600" />
@@ -86,7 +84,7 @@ export default function ExperiencePage() {
           {experiences.slice(0, 2).map((exp) => (
             <div
               key={exp.id}
-              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 space-y-2.5"
+              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-on-white hover:shadow-on-white-hover space-y-2.5 transition-all duration-200"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                 <div>

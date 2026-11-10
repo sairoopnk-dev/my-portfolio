@@ -36,7 +36,7 @@ export function PanelNav({ className }: PanelNavProps) {
               className={cn(
                 "text-xs sm:text-[13px] tracking-wide transition-all duration-150 px-2.5 py-1 rounded-full",
                 isActive
-                  ? "bg-neutral-900 text-white font-bold shadow-sm"
+                  ? "bg-blue-600 text-white font-bold shadow-[0_4px_14px_rgba(18,62,140,0.3)]"
                   : "text-neutral-600 font-semibold hover:text-blue-600 hover:bg-neutral-100/70"
               )}
             >

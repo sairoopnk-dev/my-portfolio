@@ -21,7 +21,7 @@ export function StatCard({
   return (
     <div
       className={cn(
-        "bg-white text-neutral-950 rounded-2xl p-3.5 sm:p-4 shadow-2xl min-w-[105px] sm:min-w-[125px] border border-white/80 transition-transform duration-200 hover:scale-105",
+        "bg-white text-neutral-950 rounded-2xl p-3.5 sm:p-4 shadow-on-blue min-w-[105px] sm:min-w-[125px] border border-white/80 transition-all duration-200 hover:scale-105 shadow-on-blue-hover",
         className
       )}
       {...props}
@@ -68,7 +68,7 @@ export function TestimonialCard({
   return (
     <div
       className={cn(
-        "bg-white text-neutral-900 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl border border-neutral-100 max-w-[280px] sm:max-w-xs transition-transform duration-200 hover:scale-[1.02]",
+        "bg-white text-neutral-900 rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-on-white border border-neutral-100 max-w-[280px] sm:max-w-xs transition-all duration-200 hover:scale-[1.02] shadow-on-white-hover",
         className
       )}
       {...props}

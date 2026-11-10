@@ -5,7 +5,6 @@ import Link from "next/link";
 import { ArrowUpRight, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/ui/social-icons";
 import { projects } from "@/content/projects";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { Badge } from "@/components/ui/badge";
 import { PanelNav } from "@/components/layout/panel-nav";
 
@@ -39,8 +38,7 @@ export default function ResultsPage() {
 
         {/* Top Header */}
         <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-3">
-            <BrandLogo className="text-white" size={40} />
+          <div>
             <Badge variant="blue">VERIFIED DELIVERABLES</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.85rem] font-black tracking-tight text-white leading-[1.08] pt-1 max-w-lg">
@@ -55,7 +53,7 @@ export default function ResultsPage() {
             and sub-50ms observability systems.
           </p>
 
-          {/* Filter Pills */}
+          {/* Filter Pills with Section 2 white contrast shadow on active */}
           <div className="flex flex-wrap gap-2 pt-1">
             {categories.map((cat) => (
               <button
@@ -63,7 +61,7 @@ export default function ResultsPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold tracking-wide transition-all ${
                   activeCategory === cat
-                    ? "bg-white text-neutral-950 shadow-md scale-105"
+                    ? "bg-white text-neutral-950 shadow-on-blue scale-105"
                     : "bg-white/10 text-neutral-300 hover:text-white border border-white/15"
                 }`}
               >
@@ -73,11 +71,11 @@ export default function ResultsPage() {
           </div>
         </div>
 
-        {/* Action Link */}
+        {/* Action Link with white contrast shadow on blue */}
         <div className="pt-2 flex items-center gap-3 relative z-10">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-lg hover:bg-neutral-100 transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-on-blue hover:shadow-on-blue-hover transition-all hover:scale-105"
           >
             <span>Request Technical Brief</span>
             <ArrowUpRight size={16} className="text-blue-600" />
@@ -95,12 +93,12 @@ export default function ResultsPage() {
           <PanelNav />
         </div>
 
-        {/* Project Cards */}
+        {/* Project Cards with blue contrast shadow on white */}
         <div className="my-auto py-4 sm:py-6 space-y-3.5 max-w-lg relative z-10">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 hover:border-blue-300 transition-all duration-200 space-y-2.5"
+              className="p-4 sm:p-5 rounded-2xl bg-neutral-50 border border-neutral-200/90 shadow-on-white hover:shadow-on-white-hover hover:border-blue-300 transition-all duration-200 space-y-2.5"
             >
               <div className="flex items-start justify-between gap-3">
                 <div>

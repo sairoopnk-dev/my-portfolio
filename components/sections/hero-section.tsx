@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { BrandLogo } from "@/components/ui/brand-logo";
 import { StatCard, TestimonialCard } from "@/components/ui/stat-card";
 import { PanelNav } from "@/components/layout/panel-nav";
 import { InstagramIcon, LinkedinIcon, GithubIcon } from "@/components/ui/social-icons";
@@ -40,20 +39,15 @@ export function HeroSection() {
           <circle cx="280" cy="280" r="150" stroke="white" strokeWidth="1" strokeDasharray="4 6" />
         </svg>
 
-        {/* TOP LEFT: Brand Emblem & Outlined Eyebrow Capsule */}
-        <div className="space-y-3 sm:space-y-4 relative z-10">
-          <div className="flex items-center gap-4">
-            <BrandLogo className="text-white drop-shadow-md" size={44} />
-          </div>
-          <div>
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider text-white/90 bg-white/10 border border-white/25 backdrop-blur-md shadow-sm">
-              Alex Vance — Systems Architect
-            </span>
-          </div>
+        {/* TOP LEFT: Outlined Eyebrow Capsule (No unwanted circular logo) */}
+        <div className="relative z-10 pt-1">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider text-white/90 bg-white/10 border border-white/25 backdrop-blur-md shadow-on-blue">
+            Alex Vance — Systems Architect
+          </span>
         </div>
 
         {/* MIDDLE LEFT: Dominant Headline matching Image 1 scale */}
-        <div className="my-6 sm:my-8 lg:my-auto max-w-xl space-y-4 sm:space-y-5 relative z-10">
+        <div className="my-6 sm:my-8 lg:my-auto max-w-lg space-y-4 sm:space-y-5 pr-2 lg:pr-6 relative z-10">
           <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] xl:text-[4.15rem] font-black tracking-tight text-white leading-[1.04]">
             Building <br />
             digital experiences <br />
@@ -65,15 +59,15 @@ export function HeroSection() {
             crafted web applications with modern TypeScript.
           </p>
 
-          {/* Primary CTA Button: Clean glowing white pill with Image 1 bright radial halo */}
+          {/* Primary CTA Button: Clean glowing white pill with Section 2 white contrast shadow */}
           <div className="pt-2 relative inline-flex">
             <div
-              className="absolute -inset-4 bg-sky-400/40 rounded-full blur-xl pointer-events-none"
+              className="absolute -inset-4 bg-white/15 rounded-full blur-xl pointer-events-none"
               aria-hidden="true"
             />
             <Link
               href="/results"
-              className="relative inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-[0_12px_35px_-5px_rgba(29,116,232,0.45)] hover:shadow-[0_18px_45px_-5px_rgba(29,116,232,0.7)] hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className="relative inline-flex items-center gap-2.5 px-8 py-3.5 sm:py-4 rounded-full bg-white text-neutral-950 font-bold text-xs sm:text-sm tracking-wide shadow-on-blue hover:shadow-on-blue-hover hover:bg-neutral-100 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
             >
               <span>Start Your Upgrade</span>
               <ArrowUpRight size={17} className="text-blue-600" />
@@ -81,7 +75,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* BOTTOM LEFT: Floating Stat Cards matching Image 1 */}
+        {/* BOTTOM LEFT: Floating Stat Cards matching Image 1 with white shadow on blue */}
         <div className="pt-4 flex items-center gap-3 sm:gap-4 relative z-30 animate-float-slow">
           <StatCard
             label="Focus Level"
@@ -106,9 +100,9 @@ export function HeroSection() {
           <PanelNav />
         </div>
 
-        {/* MIDDLE: Editorial Greeting & Priorities */}
-        <div className="my-auto py-4 sm:py-6 space-y-3 sm:space-y-4 max-w-md relative z-10">
-          <div className="inline-flex items-center px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-blue-600 bg-blue-50 border border-blue-200">
+        {/* MIDDLE: Editorial Greeting & Priorities (Offset to the right to clear profile photo) */}
+        <div className="my-auto py-4 sm:py-6 space-y-3 sm:space-y-4 max-w-md lg:max-w-lg pl-2 sm:pl-6 lg:pl-16 xl:pl-24 relative z-10">
+          <div className="inline-flex items-center px-3 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase text-blue-600 bg-blue-50 border border-blue-200 shadow-[0_2px_8px_rgba(18,62,140,0.12)]">
             Hello
           </div>
 
@@ -126,7 +120,7 @@ export function HeroSection() {
           </p>
         </div>
 
-        {/* BOTTOM RIGHT: Floating Testimonial Quote Card matching Image 1 */}
+        {/* BOTTOM RIGHT: Floating Testimonial Quote Card matching Image 1 with blue shadow on white */}
         <div className="pt-2 flex justify-end relative z-30 animate-float-delayed">
           <TestimonialCard
             author="Jordi Hernandez"
@@ -137,28 +131,28 @@ export function HeroSection() {
       </div>
 
       {/* =================================================================== */}
-      {/* CENTERPIECE: PROFILE PHOTO AT EXACT 50% WIDTH & 50% HEIGHT (CENTER) */}
-      {/* Center of image aligns with 50vw and 50vh, overlapping both halves  */}
+      {/* CENTERPIECE: PROFILE PHOTO GROUNDED AT BOTTOM & HORIZONTALLY CENTERED*/}
+      {/* Matches Image 2: torso grounded at bottom, head cleanly integrated */}
       {/* =================================================================== */}
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 pointer-events-none flex flex-col items-center justify-center">
-        <div className="relative w-[340px] sm:w-[460px] md:w-[540px] lg:w-[620px] xl:w-[680px] max-h-[85vh] aspect-[1447/1087] flex items-center justify-center">
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 pointer-events-none flex flex-col items-center justify-end">
+        <div className="relative h-[72vh] sm:h-[78vh] md:h-[82vh] lg:h-[86vh] xl:h-[90vh] max-h-[92vh] aspect-[1447/1087] flex items-end justify-center">
           <Image
             src="/profile.png"
             alt="Alex Vance"
             width={1447}
             height={1087}
             priority
-            className="w-full h-full object-contain drop-shadow-[0_25px_60px_rgba(4,9,20,0.65)]"
+            className="w-full h-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(4,9,20,0.65)]"
             sizes="(max-width: 768px) 340px, (max-width: 1280px) 540px, 680px"
           />
 
-          {/* Circular Social Outline Buttons matching Image 1 directly below chest */}
-          <div className="absolute bottom-2 sm:bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2.5 pointer-events-auto z-30">
+          {/* Circular Social Outline Buttons matching Image 2 sitting on shirt near bottom */}
+          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2.5 pointer-events-auto z-30">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-circle-btn shadow-lg"
+              className="social-circle-btn shadow-on-blue"
               aria-label="Instagram"
             >
               <InstagramIcon size={14} />
@@ -167,7 +161,7 @@ export function HeroSection() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-circle-btn shadow-lg"
+              className="social-circle-btn shadow-on-blue"
               aria-label="LinkedIn"
             >
               <LinkedinIcon size={14} />
@@ -176,7 +170,7 @@ export function HeroSection() {
               href="https://github.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="social-circle-btn shadow-lg"
+              className="social-circle-btn shadow-on-blue"
               aria-label="GitHub"
             >
               <GithubIcon size={14} />
