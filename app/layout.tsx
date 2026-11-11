@@ -62,8 +62,33 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: siteConfig.name,
+    jobTitle: siteConfig.title,
+    url: "https://alexvance.dev",
+    sameAs: siteConfig.socialLinks
+      .filter((s) => s.platform !== "email")
+      .map((s) => s.url),
+    description: siteConfig.bio,
+    knowsAbout: [
+      "TypeScript",
+      "Next.js",
+      "React",
+      "Distributed Systems",
+      "Cloud Architecture",
+    ],
+  };
+
   return (
     <html lang="en" className="h-full w-full antialiased m-0 p-0">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="h-full w-full m-0 p-0 bg-[#040914] text-[#f1f5f9] selection:bg-blue-600/40 selection:text-white overflow-x-hidden">
         <SkipLink />
         <main id="main-content" className="w-full h-full min-h-[100svh] lg:h-[100svh] m-0 p-0 overflow-hidden flex flex-col">

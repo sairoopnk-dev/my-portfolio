@@ -8,6 +8,40 @@ interface StatCardProps extends React.HTMLAttributes<HTMLDivElement> {
   indicatorActive?: boolean;
 }
 
+export interface FocusCardProps extends React.HTMLAttributes<HTMLDivElement> {
+  title: string;
+  subtitle: string;
+}
+
+/**
+ * Focus Card for left blue section (Section 2):
+ * - Card 1: FULL-STACK / Frontend + Backend
+ * - Card 2: AI-FOCUSED / Modern AI Applications
+ */
+export function FocusCard({
+  title,
+  subtitle,
+  className,
+  ...props
+}: FocusCardProps) {
+  return (
+    <div
+      className={cn(
+        "bg-white text-neutral-950 rounded-2xl p-3.5 sm:p-4 shadow-on-blue min-w-[125px] sm:min-w-[145px] border border-white/80 transition-all duration-200 hover:scale-105 shadow-on-blue-hover",
+        className
+      )}
+      {...props}
+    >
+      <div className="text-xs sm:text-[13px] font-black tracking-wider text-neutral-900 leading-tight uppercase">
+        {title}
+      </div>
+      <div className="text-[10px] sm:text-[11px] font-semibold text-neutral-500 mt-1 leading-snug">
+        {subtitle}
+      </div>
+    </div>
+  );
+}
+
 /**
  * Floating Stat Card recreating the bottom-left widgets in Image 1
  */

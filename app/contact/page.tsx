@@ -114,12 +114,13 @@ export default function ContactPage() {
       <div className="relative w-full h-full bg-white text-neutral-900 flex flex-col justify-between p-6 sm:p-8 lg:p-12 xl:p-16 overflow-hidden z-10">
         
         {/* Panel Navigation at top */}
-        <div className="relative z-20">
+        <div className="relative z-20 -translate-y-2.5 sm:-translate-y-3.5 lg:-translate-y-5">
           <PanelNav />
         </div>
 
         {/* Form Container with blue shadow on white */}
-        <div className="my-auto py-3 sm:py-5 px-5 sm:px-7 rounded-3xl bg-neutral-50/90 border border-neutral-200/90 shadow-on-white max-w-lg relative z-10">
+        <div className="my-auto py-4 sm:py-6 max-w-md lg:max-w-lg pl-4 sm:pl-6 lg:pl-24 xl:pl-32 translate-x-0 sm:translate-x-2 lg:translate-x-4 xl:translate-x-8 relative z-10">
+          <div className="py-3 sm:py-5 px-5 sm:px-7 rounded-3xl bg-neutral-50/90 border border-neutral-200/90 shadow-on-white w-full">
           {isSubmitted ? (
             <div className="py-10 text-center space-y-3">
               <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-md">
@@ -220,6 +221,7 @@ export default function ContactPage() {
               </Button>
             </form>
           )}
+          </div>
         </div>
 
         {/* Bottom Footer */}

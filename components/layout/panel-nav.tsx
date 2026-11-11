@@ -26,7 +26,7 @@ export function PanelNav({ className }: PanelNavProps) {
       )}
       aria-label="Panel Navigation"
     >
-      <div className="flex items-center gap-1.5 sm:gap-3 md:gap-5 flex-wrap">
+      <div className="flex items-center gap-1.5 sm:gap-3 md:gap-5 flex-wrap -translate-y-1 sm:-translate-y-2 -translate-x-2 sm:-translate-x-5 md:-translate-x-6">
         {siteConfig.navItems.map((item) => {
           const isActive = pathname === item.href;
           return (

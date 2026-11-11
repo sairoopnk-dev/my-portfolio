@@ -69,12 +69,12 @@ export default function SkillsPage() {
       <div className="relative w-full h-full bg-white text-neutral-900 flex flex-col justify-between p-6 sm:p-8 lg:p-12 xl:p-16 overflow-hidden z-10">
         
         {/* Panel Navigation at top */}
-        <div className="relative z-20">
+        <div className="relative z-20 -translate-y-2.5 sm:-translate-y-3.5 lg:-translate-y-5">
           <PanelNav />
         </div>
 
         {/* Skills Grid */}
-        <div className="my-auto py-4 sm:py-6 space-y-3.5 max-w-lg relative z-10">
+        <div className="my-auto py-4 sm:py-6 space-y-3.5 max-w-md lg:max-w-lg pl-4 sm:pl-6 lg:pl-24 xl:pl-32 translate-x-0 sm:translate-x-2 lg:translate-x-4 xl:translate-x-8 relative z-10">
           {skillCategories.map((cat, idx) => (
             <div
               key={idx}
